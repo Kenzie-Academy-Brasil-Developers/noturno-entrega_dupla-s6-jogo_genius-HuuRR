@@ -1,3 +1,6 @@
+
+console.log()
+
 const main = document.getElementsByClassName("main")
 const container = document.createElement("section")
 container.classList.add("tabuleiro")
