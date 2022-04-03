@@ -1,0 +1,60 @@
+
+
+.tabuleiro {
+    width: 350px;
+    height: 350px;
+    border-radius: 100%;
+    background-color: burlywood;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.botao {
+    height: 173px;
+    width: 173px;
+    border: 1px solid;
+}
+
+.botao:hover {
+    cursor: pointer;
+}
+
+.botao-verde{
+    background-color: green;
+    border-radius: 100% 0 0 0;
+}
+.botao-amarelo {
+    background-color: yellow;
+    border-radius: 0 100% 0 0;
+}
+
+.botao-azul {
+    background-color: blue;
+    border-radius: 0 0 100% 0;
+}
+.botao-vermelho {
+    background-color: red;
+    border-radius: 0 0 0 100%;
+}
+
+.comando {
+    border-radius: 100%;
+    background-color: black;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.recomecar {
+    color: white;
+    cursor: pointer;
+}
