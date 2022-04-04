@@ -77,17 +77,56 @@ function comecarJogo (){
     if (nivel === 1) {
         placarAtual.innerText = 0
     }
-    arrayJogo.length = 0
+    //arrayJogo.length = 0
     arrayJogado.length = 0
     jogada = 0
     document.querySelector(".recomecar").style.visibility = "hidden";
     centro.innerText = informacoes
-    for(let i = 0; i < nivel; i++) {
-        gerarRandon()
-    }
-    centro.innerText = suaVez
+    gerarRandon()
+    setTimeout(() => {centro.innerText = suaVez} , 1000+(2000*arrayJogo.length)) //centro.innerText = suaVez
     console.log(arrayJogo)
+    piscar(arrayJogo)
 }
+
+function piscar (array){
+    let timeOut = 1000
+    for(let i = 0; i < arrayJogo.length; i++) {
+        if(array[i] === 1){
+            setTimeout(() => {verde.setAttribute("id", "transformar")
+            }, timeOut)
+            timeOut += 1000
+            setTimeout(() => {
+            verde.removeAttribute("id") 
+            }, timeOut)
+        }
+        if(array[i] === 2){
+            setTimeout(() => {amarelo.setAttribute("id", "transformar")
+            }, timeOut)
+            timeOut += 1000
+            setTimeout(() => {
+            amarelo.removeAttribute("id") 
+            }, timeOut)
+        }
+        if(array[i] === 3){
+            setTimeout(() => {vermelho.setAttribute("id", "transformar")
+            }, timeOut)
+            timeOut += 1000
+            setTimeout(() => {
+            vermelho.removeAttribute("id") 
+            }, timeOut)
+        }
+        if(array[i] === 4){
+            setTimeout(() => {azul.setAttribute("id", "transformar")
+            }, timeOut)
+            timeOut += 1000
+            setTimeout(() => {
+            azul.removeAttribute("id") 
+            }, timeOut)
+        }
+        timeOut += 1000
+    }
+}
+
 
 function atribuiPlacar(){
     placarAtual.innerText = nivel
@@ -101,7 +140,9 @@ function validaJogada (){
     if (arrayJogado[jogada] !== arrayJogo[jogada]){
         centro.innerText = errou
         document.querySelector(".recomecar").style.visibility = "visible";
+        //document.querySelector(".info").style.visibility = "hidden";
         nivel = 1
+        arrayJogo.length = 0
     } else if (arrayJogado.length === arrayJogo.length){
         atribuiPlacar()
         nivel += 1

@@ -1,4 +1,7 @@
-
+body {
+    display: flex;
+    justify-content: center;
+}
 
 .tabuleiro {
     width: 350px;
@@ -55,6 +58,19 @@
 }
 
 .recomecar {
-    color: white;
+    color: black;
     cursor: pointer;
+}
+
+#transformar {
+    transform: scale(1.2);
+}
+
+.placar {
+    font-family: 'Times New Roman', Times, serif;
+    width: 350px;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
 }
